@@ -1,8 +1,6 @@
 import time
 import datetime
 import json
-import requests
-import threading
 import os
 import shutil
 
