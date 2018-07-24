@@ -6,7 +6,6 @@ import shutil
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'Lib/site-packages')))
 # need to find something python3 compatible  
 # import urllib2
-
 from azure.storage.blob import ContentSettings,AppendBlobService
 
 class Sim(object):
@@ -25,6 +24,7 @@ class Sim(object):
         n = 0
         filse = []
         filesName = self.dirPath + self.pathName
+        filesName = os.path.abspath(filesName)
         for root, dirs, files in os.walk(filesName):
             for name in files:
                 if(name.endswith(".csv")):
@@ -62,5 +62,5 @@ class Sim(object):
         print('end')
  
 if __name__ == "__main__":
-    updateFil = Sim('./','2018-07-23-14-34-41')
+    updateFil = Sim('.//','UploadDemo//2018-07-20-11-36-39//')
     updateFil.begin_update_files()
