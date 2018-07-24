@@ -1,9 +1,9 @@
-import time
+import time,sys
 import datetime
 import json
 import os
 import shutil
-
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'Lib/site-packages')))
 # need to find something python3 compatible  
 # import urllib2
 
