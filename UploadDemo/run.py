@@ -25,8 +25,10 @@ class Sim(object):
         n = 0
         filse = []
         filesName = self.dirPath + self.pathName
-        filesName = os.path.abspath(filesName)
+        filesName = os.path.abspath(os.path.join(os.path.dirname( __file__ ), filesName))
+        print(filesName)
         for root, dirs, files in os.walk(filesName):
+            print(files)
             for name in files:
                 if(name.endswith(".csv")):
                     n += 1
@@ -63,6 +65,5 @@ class Sim(object):
         print('end')
  
 if __name__ == "__main__":
-    dirPath = os.path.abspath(os.path.join(os.path.dirname( __file__ ), './'))
-    updateFil = Sim(dirPath,'//2018-07-20-11-36-39')
+    updateFil = Sim('','2018-07-20-11-36-39')
     updateFil.begin_update_files()
