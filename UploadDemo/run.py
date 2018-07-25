@@ -3,7 +3,7 @@ import datetime
 import json
 import os
 import shutil
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'Lib/site-packages')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'myenv/Lib/site-packages')))
 # need to find something python3 compatible  
 # import urllib2
 from azure.storage.blob import ContentSettings,AppendBlobService
