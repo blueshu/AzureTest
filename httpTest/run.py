@@ -25,7 +25,7 @@ returnData = {
     "status": 200,
     
     #Response Body:
-    "body": '{"res":"1222"}',
+    "body": json.dumps('{"res":"1222"}'),
     
     # Send any number of HTTP headers
     "headers": {
