@@ -18,11 +18,6 @@ print "--- HEADERS ---"
 print http.headers
 print
 
-print "--- OTHER ENVIRONMENTAL VARIABLES ---"
-for x in http.env:
-    print x
-print
-
 
 # All data to be returned to the client gets put into this dict
 returnData = {
@@ -35,7 +30,7 @@ returnData = {
     # Send any number of HTTP headers
     "headers": {
         "Content-Type": "application/json",
-        "X-Awesome-Header": "YesItIs"
+        "Access-Control-Allow-Origin": "*"
     }
 }
 
