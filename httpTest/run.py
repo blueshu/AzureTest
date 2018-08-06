@@ -25,12 +25,13 @@ returnData = {
     "status": 200,
     
     #Response Body:
-    "body": json.dumps('{"res":"1222"}'),
+    "body": {"res":"1222"},
     
     # Send any number of HTTP headers
     "headers": {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": '*'
     }
 }
 
