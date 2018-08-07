@@ -33,14 +33,9 @@ query_string = urlparts[1] if len(urlparts) == 2 else ''
 print("QUERY STRING => {}".format(query_string))
 
 if http_method.lower() == 'post':
-    request_body = open(env[_AZURE_FUNCTION_HTTP_INPUT_ENV_NAME], "r").read()
+    request_body = open(env, "r").read()
     print("REQUEST BODY => {}".format(request_body))
 
 res_body = {}
-print("Dump ENVIRONMENT VARIABLES:")
-for k in env:
-    print("ENV: {0} => {1}".format(k, env[k]))
-    if (k.startswith(_REQ_PREFIX)):
-        res_body[k] = env[k]
 
 write_http_response(200, res_body)
