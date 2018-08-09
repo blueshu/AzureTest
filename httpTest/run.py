@@ -32,10 +32,16 @@ urlparts =req_url.split('?')
 query_string = urlparts[1] if len(urlparts) == 2 else ''
 print("QUERY STRING => {}".format(query_string))
 
+class JSONObject:
+     def __init__(self, d):
+         self.__dict__ = d
+
+
 if http_method.lower() == 'post':
     request_body = open(env[_AZURE_FUNCTION_HTTP_INPUT_ENV_NAME], "r").read()
-    print("REQUEST BODY => {}".format(request_body))
+    if 'userId' in request_body:
+        data = json.loads(request_body, object_hook=JSONObject)
+        print(data)
+        record_to_ansplatform(data)
 
-res_body = {}
-
-write_http_response(200, res_body)
+res_body = {"success": 1}
